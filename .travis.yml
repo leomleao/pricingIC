@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+before_install:
+- openssl aes-256-cbc -K $encrypted_2dc2bb163caf_key -iv $encrypted_2dc2bb163caf_iv
+  -in credentials.tar.gz.enc -out credentials.tar.gz -d
+- tar -xzf credentials.tar.gz
+deploy:
+  provider: gae
+  keyfile: client-secret.json
+  project: omega-zeta
+  default: true
+  on:
+    branch: "prod"
+

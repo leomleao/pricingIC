@@ -1,0 +1,9 @@
+# Node.js Tools
+node_modules/
+
+# Local
+dist
+docs
+
+# sample database
+sample/
